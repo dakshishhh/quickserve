@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #171616;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 90vh;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.464);
+    position: relative;
+}
+
+/* Decorative background elements */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: all 0.8s ease;
+}
+
+.shape-1 {
+    width: 150px;
+    height: 150px;
+    background: #efeeeb;
+    top: -50px;
+    right: 10%;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    background: #06D6A0;
+    bottom: -80px;
+    right: 20%;
+    z-index: -1;
+}
+
+.shape-3 {
+    width: 300px;
+    height: 300px;
+    background: #118AB2;
+    top: 40%;
+    right: -100px;
+    z-index: -1;
+}
+
+/* Content area */
+.login-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    margin-bottom: 2rem;
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: fadeInDown 0.8s forwards;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 450px;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 0.8s 0.3s forwards;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #fffefe;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #ababab;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #faf6f6;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #118AB2;
+    box-shadow: 0 0 0 2px rgba(17, 138, 178, 0.2);
+    outline: none;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    color: #33dddd;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #feffff;
+}
+
+.continue-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #143e4c, #118AB2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.continue-btn:hover {
+    background: linear-gradient(45deg, #128d77, #0d7a9e);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.continue-btn:active {
+    transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Hover effect for shapes */
+.container:hover .shape-1 {
+    transform: translateY(-10px) rotate(10deg);
+}
+
+.container:hover .shape-2 {
+    transform: translateY(10px) rotate(-5deg);
+}
+
+.container:hover .shape-3 {
+    transform: translateY(-5px) rotate(5deg);
+}
